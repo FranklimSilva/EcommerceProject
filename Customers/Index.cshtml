@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ECommerceProject.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Dados Cliente</h2>
+
+<p>
+    @Html.ActionLink("Criar Cadastro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cities.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cities.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.CustumerId }, new { @class="btn btn-warning"}) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.CustumerId }, new { @class="btn btn-info"}) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.CustumerId }, new {@class="btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

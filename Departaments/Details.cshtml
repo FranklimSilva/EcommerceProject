@@ -1,0 +1,25 @@
+﻿@model ECommerceProject.Models.Departaments
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes do Departamento</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.DepartamentsId }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("◀ Voltar", "Index", new { }, new { @class = "btn btn-default" })
+</p>
